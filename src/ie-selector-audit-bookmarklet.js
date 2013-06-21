@@ -8,7 +8,7 @@
 
     var
       styleSheet = styleSheets[j],
-      rules = styleSheet.cssRules,
+      rules = styleSheet.cssRules || styleSheet.rules,
       totalRulesInStylesheet = rules.length,
       totalSelectorsInStylesheet = 0;
 
@@ -29,8 +29,8 @@
       "Selectors: " + totalSelectorsInStylesheet + "\n"
     )
 
-    if (totalSelectorsInStylesheet > 4095) {
-      alert("Exceeded IE selector max of 4,095!")
+    if (totalSelectorsInStylesheet >= 4095) {
+      alert("Met or exceeded IE selector max of 4,095!")
     }
 
   }
