@@ -1,6 +1,7 @@
 # Description
 
-Analyzes stylesheets; logs their sources, number of rules, number of selectors; and alerts users if the number of selectors meets or exceeds IE's 4,095 limit. [(Stylesheet Limits in Internet Explorer)](http://blogs.msdn.com/b/ieinternals/archive/2011/05/14/internet-explorer-stylesheet-rule-selector-import-sheet-limit-maximum.aspx)
+This little fellow takes a gander at the current web page's stylesheets and logs their sources, number of rules, and number of selectors to the console. 
+An alert box will let you know if the number of selectors meets or exceeds Internet Explorer's limit of 4,095. [(Stylesheet Limits in Internet Explorer)](http://blogs.msdn.com/b/ieinternals/archive/2011/05/14/internet-explorer-stylesheet-rule-selector-import-sheet-limit-maximum.aspx)
 
 # Get It
 
@@ -8,4 +9,4 @@ Analyzes stylesheets; logs their sources, number of rules, number of selectors; 
 
 # Credits
 
-This is based off of [this gist](https://gist.github.com/eltoob/4586719).
+This is based off [a gist](https://gist.github.com/eltoob/4586719) by eltoob.
