@@ -1,5 +1,5 @@
 <p>Drag me to your bookmark bar: <a href='javascript:
 
-(function(){var e,t,n,r,i,s,o,u,a,f,l;o=document.styleSheets;console.log("Stylesheets: "+(o.length||0)+"\n");for(u=0,f=o.length;u<f;u++){s=o[u];r=s.cssRules||s.rules;e=r!=null?r.length:0;t=0;i=s.href||"(Inline)";if(e){for(a=0,l=r.length;a<l;a++){n=r[a];if(n.selectorText){try{t+=n.selectorText.split(",").length}catch(c){console.log(c)}}}}console.log("  Stylesheet: "+i+"\n");console.log("    Rules/Selectors: "+e+" / "+t+"\n");if(t>=4095){alert("Met or exceeded IE (&le;9) selector max of 4,095!")}}})()
+(function(){var e,t,n,r,i,s,o,u,a,f,l;o=document.styleSheets;console.log("Stylesheets: "+(o.length||0)+"\n");for(u=0,f=o.length;u<f;u++){s=o[u];try{r=s.cssRules||s.rules;e=r!=null?r.length:0;t=0;i=s.href||"(Inline)"}catch(c){console.log(c.message);continue}if(e){for(a=0,l=r.length;a<l;a++){n=r[a];if(n.selectorText){try{t+=n.selectorText.split(",").length}catch(c){console.log(c)}}}}console.log("  Stylesheet: "+i+"\n");console.log("    Rules/Selectors: "+e+" / "+t+"\n");if(t>=4095){alert("Met or exceeded IE (&le;9) selector max of 4,095!")}}})();
 
 ;'>Stylesheet Audit</a></p>

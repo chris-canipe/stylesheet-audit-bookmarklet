@@ -4,10 +4,17 @@
 
   for stylesheet in stylesheets
 
-    rules = stylesheet.cssRules || stylesheet.rules
-    num_rules  = if rules? then rules.length else 0
-    num_selectors = 0
-    source = stylesheet.href || '(Inline)'
+    # Originally added to handle Firefox's
+    # "SecurityError: The operation is insecure"
+    # when Google Maps includes an external stylesheet
+    try
+      rules = stylesheet.cssRules || stylesheet.rules
+      num_rules  = if rules? then rules.length else 0
+      num_selectors = 0
+      source = stylesheet.href || '(Inline)'
+    catch err
+      console.log err.message
+      continue
 
     if num_rules
       for rule in rules
