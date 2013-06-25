@@ -13,13 +13,14 @@
       for rule in rules
         if rule.selectorText
           try
-            num_selectors += rule.selectorText.split(",")?.length
+            num_selectors += rule.selectorText.split(",").length
           catch err
             console.log err
 
     console.log "  Stylesheet: #{source}\n"
     console.log "    Rules/Selectors: #{num_rules} / #{num_selectors}\n"
 
-    alert "Met or exceeded IE (&le;9) selector max of 4,095!" \
-      if num_selectors >= 4095
+    alert "Met or exceeded IE (&le;9) selector max of 4,095!" if num_selectors >= 4095
+
+  return
 )();
