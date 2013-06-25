@@ -2,4 +2,4 @@
 
 (function(){var e,t,n,r,i,s,o,u,a,f,l,c,h;o=document.styleSheets;console.log("Stylesheets: "+(o.length||0)+"\n");h=[];for(u=0,f=o.length;u<f;u++){s=o[u];r=s.cssRules||s.rules;e=r!=null?r.length:0;t=0;i=s.href||"(Inline)";if(e){for(a=0,l=r.length;a<l;a++){n=r[a];if(n.selectorText){try{t+=(c=n.selectorText.split(","))!=null?c.length:void 0}catch(p){console.log(p)}}}}console.log("  Stylesheet: "+i+"\n");console.log("    Rules/Selectors: "+e+" / "+t+"\n");if(t>=4095){h.push(alert("Met or exceeded IE (&le;9) selector max of 4,095!"))}else{h.push(void 0)}}return h})()
 
-;'>IE Selector Audit</a></p>
+;'>Stylesheet Audit</a></p>
