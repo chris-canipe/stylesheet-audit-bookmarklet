@@ -7,7 +7,7 @@ For more information see [stylesheet limitations in Internet Explorer](http://bl
 
 # Get It
 
-[Here](http://htmlpreview.github.io?https://raw.github.com/epicyclist/IE_selector_audit/master/bookmarker/bookmarker.html).
+[Here](http://htmlpreview.github.io?https://raw.github.com/epicyclist/stylesheet-audit-bookmarklet/master/bookmarker/bookmarker.html).
 
 # Credits
 
