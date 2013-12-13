@@ -1,6 +1,6 @@
 (->
   stylesheets = document.styleSheets
-  console.log "Stylesheets: #{stylesheets.length || 0}\n"
+  console.log "Stylesheets: #{stylesheets.length || 0}"
 
   for stylesheet in stylesheets
 
