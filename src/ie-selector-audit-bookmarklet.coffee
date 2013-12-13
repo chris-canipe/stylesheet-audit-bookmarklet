@@ -44,4 +44,4 @@
     alert "Met or exceeded IE (&le;9) selector max of 4,095!" if num_cssRules_selectors >= 4095 or num_rules >= 4095
 
   return
-)();
+)()
