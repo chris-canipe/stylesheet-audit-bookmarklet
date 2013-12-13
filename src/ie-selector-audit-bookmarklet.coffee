@@ -39,7 +39,7 @@
           catch err
             console.log err
 
-    console.log "  Stylesheet: #{source}\n"
+    console.log "  Stylesheet: #{source}"
     console.log "    (.rules) Rules/Selectors: #{num_rules} / #{num_rules_selectors}" if num_rules
     console.log "    (.cssRules) Rules/Selectors: #{num_cssRules} / #{num_cssRules_selectors}" if num_cssRules
 
