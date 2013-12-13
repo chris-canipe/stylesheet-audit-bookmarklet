@@ -9,6 +9,34 @@ For more information see [stylesheet limitations in Internet Explorer](http://bl
 
 [Here](http://htmlpreview.github.io?https://raw.github.com/epicyclist/stylesheet-audit-bookmarklet/master/bookmarker/bookmarker.html).
 
+# Changelog
+
+## v2.0
+
+The use of `.cssRules` or `.rules` has been changed: now both are examined. This is done to circumvent a problem I discovered in IE9. IE9 supports both `.cssRules` and `.rules`; however, they return different values (in my case, `.rules` returned almost 2,000 more!).
+
+I couldn't find solid information on this. Quirkmode's section on [accessing stylesheets](http://www.quirksmode.org/dom/w3c_css.html#access) mentions a difference in `@import` handling, but this did not apply in my case. This statement was closer to the truth:
+
+> IE... splits up selectors like p#test, ul into two rules. This behaviour persists in IE9, although cssRules works correctly.
+
+When comparing `.cssRules` and `.rules`, I discovered that `.cssRules` reflected the stylesheet, while `.rules` separated the rules into individual selectors. Here's an example:
+
+- `document.styleSheets[0].cssRules[0]` returns "A, B, C"
+- `document.styleSheets[0].cssRules[1]` returns "D, E, F"
+- `document.styleSheets[0].rules[0]` returns "A, B, C"
+- `document.styleSheets[0].rules[1]` returns "B, C"
+- `document.styleSheets[0].rules[2]` returns "C"
+- `document.styleSheets[0].rules[3]` returns "D, E, F"
+- `document.styleSheets[0].rules[4]` returns "E, F"
+- `document.styleSheets[0].rules[5]` returns "F"
+
+Because of this, this version logs the results from both and alerts the user if one of the following is true:
+
+1. The number of selectors from `.cssRules` is &ge; 4,095
+1. The number of rules from `.rules` is &ge; 4,095
+
+(It's also worth noting that IE9 fails some of the stylesheet tests [here](http://www.quirksmode.org/dom/tests/stylesheets.html).)
+
 # Credits
 
 This is based off [a gist](https://gist.github.com/eltoob/4586719) by eltoob.
