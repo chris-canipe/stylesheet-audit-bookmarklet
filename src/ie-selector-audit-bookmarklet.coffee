@@ -1,4 +1,6 @@
 (->
+  console.log "Stylesheet Audit v2.0"
+
   stylesheets = document.styleSheets
   console.log "Stylesheets: #{stylesheets.length || 0}"
 
