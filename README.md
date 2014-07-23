@@ -11,6 +11,12 @@ For more information see [stylesheet limitations in Internet Explorer](http://bl
 
 # Changelog
 
+## v3.0
+
+- Only showing a dialog for the problem state wasn't great feedback: now you get a dialog either way.
+- Updated the code to handle console errors in IE.
+- Added a "Making Changes" section to the README.
+
 ## v2.0
 
 The use of `.cssRules` or `.rules` has been changed: now both are examined. This is done to circumvent a problem I discovered in IE9. IE9 supports both `.cssRules` and `.rules`; however, they return different values (in my case, `.rules` returned almost 2,000 more!).
@@ -36,6 +42,15 @@ Because of this, this version logs the results from both and alerts the user if 
 1. The number of rules from `.rules` is &ge; 4,095
 
 (It's also worth noting that IE9 fails some of the stylesheet tests [here](http://www.quirksmode.org/dom/tests/stylesheets.html).)
+
+# Making Changes
+
+1. Update the README and Changelog
+2. Update the coffeescript source (including the version)
+3. Convert the coffeescript to javascript (e.g., [http://js2coffee.org](http://js2coffee.org))
+4. Minify the javascript (e.g, [http://jscompress.com](http://jscompress.com))
+5. Update the bookmarklet (including the version)
+6. Tag the repo
 
 # Credits
 
